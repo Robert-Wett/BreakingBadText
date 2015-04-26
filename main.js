@@ -27,15 +27,17 @@ console.log( output.join( ' ' ) );
 
 // Helpers
 function matchAndReplaceWord( word ) {
-  var isMatched = false
+  var isMatched    = false
+  var highestMatch = 0;
   var returnWord;
 
   _.each( elements, function( obj, key ) {
-    if ( isMatched )
+    if ( isMatched && highestMatch >= key.length )
       return;
 
     if ( word.match( key ) ) {
       isMatched = true;
+      highestMatch = key.length;
       returnWord = word.replace( key, util.format( '[%s]', obj.symbol ) );
     }
 
