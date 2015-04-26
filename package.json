@@ -1,0 +1,15 @@
+{
+  "name": "BreakingBadName",
+  "version": "1.0.0",
+  "description": "Take an input string and replace characters with periodic element names formatted like Breaking Bad credits",
+  "main": "main.js",
+  "scripts": {
+    "test": "./main.js Robert Wettlaufer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "lodash": "^3.7.0"
+  }
+}
