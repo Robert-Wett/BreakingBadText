@@ -39,7 +39,7 @@ function matchAndReplaceWord( word ) {
     if ( word.match( key ) ) {
       isMatched = true;
       highestMatch = key.length;
-      returnWord = word.replace( key, chalk.green( obj.symbol ) );
+      returnWord = word.replace( key, chalk.underline.green( obj.symbol ) );
     }
 
   });
