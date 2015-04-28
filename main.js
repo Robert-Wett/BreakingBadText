@@ -2,10 +2,11 @@
 
 var program  = require( 'commander' );
 var util     = require( 'util' );
+var chalk    = require( 'chalk' );
 var elements = require( './resources/elements' );
 var _        = require( 'lodash' );
-var input;
 var output   = [];
+var input;
 
 // Parse the input via commander
 program.parse( process.argv );
@@ -38,7 +39,7 @@ function matchAndReplaceWord( word ) {
     if ( word.match( key ) ) {
       isMatched = true;
       highestMatch = key.length;
-      returnWord = word.replace( key, util.format( '[%s]', obj.symbol ) );
+      returnWord = word.replace( key, chalk.green( obj.symbol ) );
     }
 
   });
