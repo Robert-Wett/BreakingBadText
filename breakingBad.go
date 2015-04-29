@@ -1,0 +1,146 @@
+package main
+
+import "os"
+import "fmt"
+import "strings"
+
+func main() {
+	name := os.Args[1]
+	elements := map[string]string{
+		"h":   "H",
+		"he":  "He",
+		"li":  "Li",
+		"be":  "Be",
+		"b":   "B",
+		"c":   "C",
+		"n":   "N",
+		"o":   "O",
+		"f":   "F",
+		"ne":  "Ne",
+		"na":  "Na",
+		"mg":  "Mg",
+		"al":  "Al",
+		"si":  "Si",
+		"p":   "P",
+		"s":   "S",
+		"cl":  "Cl",
+		"ar":  "Ar",
+		"k":   "K",
+		"ca":  "Ca",
+		"sc":  "Sc",
+		"ti":  "Ti",
+		"v":   "V",
+		"cr":  "Cr",
+		"mn":  "Mn",
+		"fe":  "Fe",
+		"co":  "Co",
+		"ni":  "Ni",
+		"cu":  "Cu",
+		"zn":  "Zn",
+		"ga":  "Ga",
+		"ge":  "Ge",
+		"as":  "As",
+		"se":  "Se",
+		"br":  "Br",
+		"kr":  "Kr",
+		"rb":  "Rb",
+		"sr":  "Sr",
+		"y":   "Y",
+		"zr":  "Zr",
+		"nb":  "Nb",
+		"mo":  "Mo",
+		"tc":  "Tc",
+		"ru":  "Ru",
+		"rh":  "Rh",
+		"pd":  "Pd",
+		"ag":  "Ag",
+		"cd":  "Cd",
+		"in":  "In",
+		"sn":  "Sn",
+		"sb":  "Sb",
+		"te":  "Te",
+		"i":   "I",
+		"xe":  "Xe",
+		"cs":  "Cs",
+		"ba":  "Ba",
+		"la":  "La",
+		"ce":  "Ce",
+		"pr":  "Pr",
+		"nd":  "Nd",
+		"pm":  "Pm",
+		"sm":  "Sm",
+		"eu":  "Eu",
+		"gd":  "Gd",
+		"tb":  "Tb",
+		"dy":  "Dy",
+		"ho":  "Ho",
+		"er":  "Er",
+		"tm":  "Tm",
+		"yb":  "Yb",
+		"lu":  "Lu",
+		"hf":  "Hf",
+		"ta":  "Ta",
+		"w":   "W",
+		"re":  "Re",
+		"os":  "Os",
+		"ir":  "Ir",
+		"pt":  "Pt",
+		"au":  "Au",
+		"hg":  "Hg",
+		"tl":  "Tl",
+		"pb":  "Pb",
+		"bi":  "Bi",
+		"po":  "Po",
+		"at":  "At",
+		"rn":  "Rn",
+		"fr":  "Fr",
+		"ra":  "Ra",
+		"ac":  "Ac",
+		"th":  "Th",
+		"pa":  "Pa",
+		"u":   "U",
+		"np":  "Np",
+		"pu":  "Pu",
+		"am":  "Am",
+		"cm":  "Cm",
+		"bk":  "Bk",
+		"cf":  "Cf",
+		"es":  "Es",
+		"fm":  "Fm",
+		"md":  "Md",
+		"no":  "No",
+		"lr":  "Lr",
+		"rf":  "Rf",
+		"db":  "Db",
+		"sg":  "Sg",
+		"bh":  "Bh",
+		"hs":  "Hs",
+		"mt":  "Mt",
+		"uun": "Uun",
+		"uuu": "Uuu",
+		"uub": "Uub",
+		"uut": "Uut",
+		"uuq": "Uuq",
+		"uup": "Uup",
+		"uuh": "Uuh",
+		"uus": "Uus",
+		"uuo": "Uuo",
+	}
+
+	var retName string
+
+	for key, value := range elements {
+		length := 0
+
+		if strings.Contains(name, key) {
+			elementNameLength := strings.Count(name, "")
+			if elementNameLength >= length {
+				length = elementNameLength
+				retName = strings.Replace(name, key, "["+value+"]", -1)
+			}
+		}
+	}
+
+	fmt.Println(retName)
+
+}
